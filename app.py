@@ -1,3 +1,4 @@
 import pandas as pd
-pd.read_csv('test_csv.csv')
-print(pd)
+data = pd.read_csv('test_csv.csv')
+print(data)
+st.map(data)
