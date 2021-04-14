@@ -40,10 +40,9 @@ st.line_chart(df)
 # display area chart 
 st.area_chart(df)
 
-st.text(df.head())
+print(df.head())
 
-st.text(df.info())
-
+print(df.info())
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
@@ -54,6 +53,7 @@ def plotting_null_data():
     plt.title('Nulls of Data')
     sns.heatmap(df.isnull(), cmap='plasma')
     return plt.show()
+
 plotting_null_data()
 
 
