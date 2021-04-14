@@ -30,8 +30,11 @@ def importing_data():
     return df
 df=importing_data()
 
-# display datafram
+# display dataframe
 st.dataframe(df)
+
+# display line chart 
+st.line_chart(df)
 
 df.head()
 
