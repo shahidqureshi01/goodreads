@@ -40,9 +40,6 @@ st.line_chart(df)
 # display area chart 
 st.area_chart(df)
 
-# display pyplot
-st.pyplot(df)
-
 #df.head()
 
 #df.info()
