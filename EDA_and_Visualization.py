@@ -31,7 +31,7 @@ def importing_data():
 df=importing_data()
 
 # display datafram
-st.datafram(df)
+st.dataframe(df)
 
 df.head()
 
