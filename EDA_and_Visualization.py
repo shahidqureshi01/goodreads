@@ -37,7 +37,10 @@ st.dataframe(df)
 # display line chart 
 st.line_chart(df)
 
-df.head()
+# display area chart 
+st.area_chart(df)
+
+#df.head()
 
 df.info()
 
