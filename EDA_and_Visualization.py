@@ -6,11 +6,6 @@
 # 2. Understanding Data Set
 # 3. Cleaning Data Set
 
-# ### 1.Importing Libraries and Data Set
-
-# In[18]:
-
-
 #Importing Libraries
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
@@ -40,9 +35,9 @@ st.line_chart(df)
 # display area chart 
 st.area_chart(df)
 
-#df.head()
+df.head()
 
-#df.info()
+df.info()
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
