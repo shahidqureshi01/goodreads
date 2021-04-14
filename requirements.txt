@@ -1,6 +1,6 @@
 streamlit
 pandas
 scipy
-os
+os-3.9.4
 matplotlib
 seaborn
