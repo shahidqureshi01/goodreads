@@ -27,7 +27,7 @@ st.text('Data analysis from the Goodreads starting from year 2000')
 
 #Importing Data
 def importing_data():
-    df=pd.read_csv("test_csv.csv")
+    df=pd.read_csv("big_books_clean.csv")
     return df
 df=importing_data()
 
