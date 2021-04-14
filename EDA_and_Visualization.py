@@ -18,10 +18,11 @@ import seaborn as sns
 import os
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import streamlit as st
 
 
-# In[26]:
-
+st.set_page_config(layout="wide")
+st.title("McGonagall's Army")
 
 #Importing Data
 def importing_data():
@@ -29,18 +30,10 @@ def importing_data():
     return df
 df=importing_data()
 
+# display datafram
+st.datafram(df)
 
-# ### 2.Understanding Data Set
-
-# In[20]:
-
-
-#Showing first 5 row of dataset
 df.head()
-
-
-# In[21]:
-
 
 df.info()
 
