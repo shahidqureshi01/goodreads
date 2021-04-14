@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 
 #Importing Data
 def importing_data():
-    df=pd.read_csv("/work/Good_reads_Best_2000s/Data.csv")
+    df=pd.read_csv("test_csv.csv")
     return df
 df=importing_data()
 
