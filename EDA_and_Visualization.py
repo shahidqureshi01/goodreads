@@ -23,7 +23,7 @@ import streamlit as st
 # basic settings 
 st.set_page_config(layout="wide")
 st.title("McGonagall's Army")
-st.text('Minerva McGonagall was born on 4 October to Robert McGonagall, a Muggle Presbyterian minister, and his wife Isobel Ross, a witch. She was the couple's first child and was named after her mother's grandmother, a very powerful witch. By then, her parents lived on the outskirts of Caithness in the Scottish Highlands, in a village where mostly Muggles lived.')
+st.text('Minerva McGonagall was born on 4 October to Robert McGonagall, a Muggle Presbyterian minister, and his wife Isobel Ross, a witch. She was the couple\'s first child and was named after her mother\'s grandmother, a very powerful witch. By then, her parents lived on the outskirts of Caithness in the Scottish Highlands, in a village where mostly Muggles lived.')
 
 #Importing Data
 def importing_data():
