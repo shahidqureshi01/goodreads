@@ -54,7 +54,7 @@ def plotting_null_data():
     plt.title('Nulls of Data')
     sns.heatmap(df.isnull(), cmap='plasma')
     return plt.show()
-st.text(Null data)
+st.text('Null data')
 st.line_chart(plotting_null_data())
 
 
