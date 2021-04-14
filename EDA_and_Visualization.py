@@ -40,9 +40,12 @@ st.line_chart(df)
 # display area chart 
 st.area_chart(df)
 
-print(df.head())
+# display pyplot
+st.pyplot(df)
 
-print(df.info())
+#df.head()
+
+#df.info()
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
@@ -55,9 +58,6 @@ def plotting_null_data():
     return plt.show()
 
 plotting_null_data()
-
-
-# In[28]:
 
 
 print("Percentage of Null Values")
