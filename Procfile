@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Data_Analysis_100_Book.ipynb
+web: sh setup.sh && streamlit run Data_Analysis_100_Book.py
