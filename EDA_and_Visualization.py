@@ -47,9 +47,6 @@ df.info()
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
-# In[27]:
-
-
 #Heat map of null cells
 def plotting_null_data():
     fig = plt.figure(figsize=(15,5))
@@ -57,7 +54,8 @@ def plotting_null_data():
     plt.title('Nulls of Data')
     sns.heatmap(df.isnull(), cmap='plasma')
     return plt.show()
-plotting_null_data()
+st.text(Null data)
+st.line_chart(plotting_null_data())
 
 
 # In[28]:
