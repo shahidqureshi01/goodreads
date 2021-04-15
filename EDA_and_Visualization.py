@@ -21,9 +21,7 @@ def importing_data():
     return df
 df=importing_data()
 
-# dispaly raw data
-st.subheader('Raw data')
-st.write(df)
+
 
 # display dataframe
 st.subheader('Data frame')
@@ -37,35 +35,41 @@ st.line_chart(df)
 st.subheader('Area chart')
 st.area_chart(df)
 
-st.write(df.info())
-
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
-#Heat map of null cells
-def plotting_null_data():
-    fig = plt.figure(figsize=(15,5))
-    fig.add_subplot(121)
-    plt.title('Nulls of Data')
-    sns.heatmap(df.isnull(), cmap='plasma')
-    return plt.show()
+# #Heat map of null cells
+# def plotting_null_data():
+#     fig = plt.figure(figsize=(15,5))
+#     fig.add_subplot(121)
+#     plt.title('Nulls of Data')
+#     sns.heatmap(df.isnull(), cmap='plasma')
+#     st.write(plt.show())
 
-c = plotting_null_data()
-st.write(c)
+# st.write('=========')
+# st.write(plotting_null_data())
+# st.write('=========')
 
+# # info
+# st.write('=========')
+# st.subheader('Info')
+# st.write(df.info())
+# st.write('=========')
 
-print("Percentage of Null Values")
+# display minmax average
+HtmlFile = open('components/temp-plot.html', 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height=600)
+
+# Null values
+st.subheader("Percentage of Null Values")
 missing_percentage = df.isnull().sum() * 100 / len(df) #Calculating percentage of missing values
-missing_percentage
+st.write(missing_percentage)
 
+# description
+st.subheader('Descripton')
+st.text(df.describe())
 
-# We have pretty less null value in our data set. Only "Places" have 32% null value.
-# 
-# Lets look at **basic statistical information** of our data set.
-
-# In[29]:
-
-
-df.describe()
 
 
 # Here is the results;
@@ -86,9 +90,6 @@ df.describe()
 # **Filling numerical data**
 # 
 
-# In[44]:
-
-
 #Filling numerical data of Number of Ratings
 df['Rating'] = df['Rating'].fillna(df['Rating'].mean())
 #Filling numerical data of Number of Reviews
@@ -98,10 +99,6 @@ df['Average_rating'] = df['Average_rating'].fillna(df['Average_rating'].mean())
 #Filling numerical data of Number of Pages
 df['Pages'] = df['Pages'].fillna(df['Pages'].mean())
 
-
-# **Filling categorical data**
-
-# In[45]:
 
 
 #Filling categorical data of Published Year
@@ -118,10 +115,10 @@ df['Setting'] = df['Setting'].fillna(df['Setting'].mode()[0])
 
 # In[46]:
 
-
-print("Percentage of Updated Null Values")
-missing_percentage_updated = df.isnull().sum() * 100 / len(df) #Calculating percentage of missing values
-missing_percentage_updated
+# NOTE: uncomment it
+# print("Percentage of Updated Null Values")
+# missing_percentage_updated = df.isnull().sum() * 100 / len(df) #Calculating percentage of missing values
+# missing_percentage_updated
 
 
 # Now we don't have any missing values!
@@ -143,10 +140,6 @@ missing_percentage_updated
 # ### 4.Graphs with Places
 
 # 
-
-# In[ ]:
-
-
 
 
 
