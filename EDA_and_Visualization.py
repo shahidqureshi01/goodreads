@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## Data Preparation
-# 1. Importing Libraries and Data Set
-# 2. Understanding Data Set
-# 3. Cleaning Data Set
 
 #Importing Libraries
 import numpy as np # linear algebra
@@ -14,6 +7,7 @@ import os
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import streamlit as st
+import streamlit.components.v1 as components
 
 
 # basic settings 
@@ -24,7 +18,15 @@ st.text('Data analysis from the Goodreads starting from year 2000')
 # enable cache
 @st.cache
 
-#Importing Data
+# import html and show the hear map
+st.header("Heat map")
+
+HtmlFile = open('/components/heat_map.html', 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code)
+
+Importing Data
 def importing_data():
     df=pd.read_csv("big_books_clean.csv")
     return df
@@ -50,7 +52,7 @@ st.area_chart(df)
 #import plotly.offline as pyo
 # Sample plotly Histogram of the two distributions from the cell above.
 trace0 = plt.Hist(x=min_max_norm,
-                      name='Average rating min max',
+name='Average rating min max',
                       opacity=.5)
 trace1 = plt.Hist(x=normalised,
                       name='Average rating normalised',
