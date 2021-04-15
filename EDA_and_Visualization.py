@@ -14,9 +14,14 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
 st.title("McGonagall's Army")
 st.text('Data analysis from the Goodreads starting from the year 2000')
-st.write(''' 
-***
+st.write('''***''')
+st.write('''
+##### Our boss wants to publish new book and she wants to be in best books on goodread. We will guide her with analysing books of data from good read.But first lets look at what is our approach;
+Publishing a book in a world where media is consumed at less than 30 second chunks can be bit of a gamble!!
+But with mountains of data at our disposal it is possible to weigh the odds in our favour if we know how to read it the right way.
 ''')
+
+
 # Importing Data
 def importing_data():
     df=pd.read_csv("big_books_clean.csv")
