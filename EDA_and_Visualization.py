@@ -35,12 +35,15 @@ st.subheader('Raw data')
 st.write(df)
 
 # display dataframe
+st.subheader('Data frame')
 st.dataframe(df)
 
 # display line chart 
+st.subheader('Line chart')
 st.line_chart(df)
 
 # display area chart 
+st.subheader('Area chart')
 st.area_chart(df)
 
 df.head()
