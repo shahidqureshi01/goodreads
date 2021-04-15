@@ -46,6 +46,20 @@ st.line_chart(df)
 st.subheader('Area chart')
 st.area_chart(df)
 
+#import plotly.graph_objs as go
+#import plotly.offline as pyo
+# Sample plotly Histogram of the two distributions from the cell above.
+trace0 = plt.Hist(x=min_max_norm,
+                      name='Average rating min max',
+                      opacity=.5)
+trace1 = plt.Hist(x=normalised,
+                      name='Average rating normalised',
+                      opacity=.5)
+
+data = [trace0, trace1]
+layout = go.Layout(title='Average rating Distribution')
+fig = go.Figure(data=data, layout=layout)
+pyo.plot(fig)
 df.head()
 
 df.info()
