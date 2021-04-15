@@ -19,10 +19,8 @@ st.text('Data analysis from the Goodreads starting from year 2000')
 @st.cache
 
 # import html and show the hear map
-HtmlFile = open('/components/heat_map.html', 'r', encoding='utf-8')
-source_code = HtmlFile.read() 
-print(source_code)
-components.html(source_code)
+components.iframe("https://docs.streamlit.io/en/latest")
+components.iframe("https://www.randomservices.org/")
 
 Importing Data
 def importing_data():
