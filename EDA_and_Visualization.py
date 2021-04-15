@@ -13,16 +13,9 @@ import streamlit.components.v1 as components
 # basic settings 
 st.set_page_config(layout="wide")
 st.title("McGonagall's Army")
-st.text('Data analysis from the Goodreads starting from year 2000')
+st.text('Data analysis from the Goodreads starting from the year 2000')
 
-# enable cache
-@st.cache
-
-# import html and show the hear map
-components.iframe("https://docs.streamlit.io/en/latest")
-components.iframe("https://www.randomservices.org/")
-
-Importing Data
+# Importing Data
 def importing_data():
     df=pd.read_csv("big_books_clean.csv")
     return df
@@ -44,23 +37,7 @@ st.line_chart(df)
 st.subheader('Area chart')
 st.area_chart(df)
 
-#import plotly.graph_objs as go
-#import plotly.offline as pyo
-# Sample plotly Histogram of the two distributions from the cell above.
-trace0 = plt.Hist(x=min_max_norm,
-name='Average rating min max',
-                      opacity=.5)
-trace1 = plt.Hist(x=normalised,
-                      name='Average rating normalised',
-                      opacity=.5)
-
-data = [trace0, trace1]
-layout = go.Layout(title='Average rating Distribution')
-fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig)
-df.head()
-
-df.info()
+st.write(df.info())
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
 
@@ -72,7 +49,8 @@ def plotting_null_data():
     sns.heatmap(df.isnull(), cmap='plasma')
     return plt.show()
 
-plotting_null_data()
+c = plotting_null_data()
+st.write(c)
 
 
 print("Percentage of Null Values")
@@ -112,13 +90,13 @@ df.describe()
 
 
 #Filling numerical data of Number of Ratings
-df['Number of Ratings'] = df['Number of Ratings'].fillna(df['Number of Ratings'].mean())
+df['Rating'] = df['Rating'].fillna(df['Rating'].mean())
 #Filling numerical data of Number of Reviews
-df['Number of Reviews'] = df['Number of Reviews'].fillna(df['Number of Reviews'].mean())
+df['Reviews'] = df['Reviews'].fillna(df['Reviews'].mean())
 #Filling numerical data of Average Ratings
-df['Average Ratings'] = df['Average Ratings'].fillna(df['Average Ratings'].mean())
+df['Average_rating'] = df['Average_rating'].fillna(df['Average_rating'].mean())
 #Filling numerical data of Number of Pages
-df['Number of Pages'] = df['Number of Pages'].fillna(df['Number of Pages'].mean())
+df['Pages'] = df['Pages'].fillna(df['Pages'].mean())
 
 
 # **Filling categorical data**
@@ -127,13 +105,13 @@ df['Number of Pages'] = df['Number of Pages'].fillna(df['Number of Pages'].mean(
 
 
 #Filling categorical data of Published Year
-df['Published Year'] = df['Published Year'].fillna(df['Published Year'].mode()[0])
+df['Year'] = df['Year'].fillna(df['Year'].mode()[0])
 #Filling categorical data of Series
 df['Series'] = df['Series'].fillna(df['Series'].mode()[0])
 #Filling categorical data of Genres
 df['Genres'] = df['Genres'].fillna(df['Genres'].mode()[0])
 #Filling categorical data of Places
-df['Places'] = df['Places'].fillna(df['Places'].mode()[0])
+df['Setting'] = df['Setting'].fillna(df['Setting'].mode()[0])
 
 
 # Lets look at last status of data set
