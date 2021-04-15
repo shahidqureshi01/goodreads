@@ -15,16 +15,24 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import streamlit as st
 
+
 # basic settings 
 st.set_page_config(layout="wide")
 st.title("McGonagall's Army")
 st.text('Data analysis from the Goodreads starting from year 2000')
+
+# enable cache
+@st.cache
 
 #Importing Data
 def importing_data():
     df=pd.read_csv("big_books_clean.csv")
     return df
 df=importing_data()
+
+# dispaly raw data
+st.subheader('Raw data')
+st.write(df)
 
 # display dataframe
 st.dataframe(df)
