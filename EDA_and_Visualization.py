@@ -14,7 +14,9 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
 st.title("McGonagall's Army")
 st.text('Data analysis from the Goodreads starting from the year 2000')
-
+st.write(''' 
+***
+''')
 # Importing Data
 def importing_data():
     df=pd.read_csv("big_books_clean.csv")
