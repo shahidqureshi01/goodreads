@@ -19,8 +19,6 @@ st.text('Data analysis from the Goodreads starting from year 2000')
 @st.cache
 
 # import html and show the hear map
-st.header("Heat map")
-
 HtmlFile = open('/components/heat_map.html', 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
 print(source_code)
