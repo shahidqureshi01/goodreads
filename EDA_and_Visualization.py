@@ -41,9 +41,23 @@ df=importing_data()
 st.subheader('Head')
 st.dataframe(df.head())
 
+# print head
+st.subheader('Data description')
+st.dataframe(df.describe())
+
+# select columns widget
+cols = ["Title", "URL", "Author",  "Rating", "Reviews", "Pages", "Year", "Series", "Setting", "Awards", "Genres"]
+st_ms = st.multiselect("Columns", df.columns.tolist(), default=cols)
+
 # display dataframe
 st.subheader('DataFrame')
 st.dataframe(df)
+
+# Year vs Average_rating 
+st.subheader('Highest Average rating years')
+st.table(df.groupby("Year").Average_rating.mean().reset_index()\
+.round(2).sort_values("Average_rating", ascending=False)\
+.assign(average_rating=lambda x: x.pop("Average_rating").apply(lambda y: "%.2f" % y)))
 
 # display line chart 
 st.subheader('Averages vs Years')
