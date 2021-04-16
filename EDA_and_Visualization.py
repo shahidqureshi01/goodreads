@@ -37,18 +37,20 @@ def importing_data():
     return df
 df=importing_data()
 
-
+# print head
+st.subheader('Head')
+st.dataframe(df.head())
 
 # display dataframe
-st.subheader('Data frame')
+st.subheader('DataFrame')
 st.dataframe(df)
 
 # display line chart 
-st.subheader('Line chart')
+st.subheader('Averages vs Years')
 st.line_chart(df)
 
 # display area chart 
-st.subheader('Area chart')
+st.subheader('Ratings vs pages')
 st.area_chart(df)
 
 # We have 12 different columns which can be categorical or numerical data in our data set. Also, we can say that there are some non-values that we should take care of! Let's check how big they are.
