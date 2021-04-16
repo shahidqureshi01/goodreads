@@ -20,6 +20,16 @@ Our boss wants to publish new book and she wants to be in best books on goodread
 Publishing a book in a world where media is consumed at less than 30 second chunks can be bit of a gamble!!But with mountains of data at our disposal it is possible to weigh the odds in our favour if we know how to read it the right way.
 ''')
 
+# sidebar 
+classifier_name = st.sidebar.selectbox(
+    'Select classifier',
+    ('Genre', 'Year', 'Author')
+)
+dataset_name = st.sidebar.selectbox(
+    'Select Dataset',
+    ('Iris', 'Breast Cancer', 'Wine')
+)
+
 
 # Importing Data
 def importing_data():
