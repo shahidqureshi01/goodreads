@@ -12,7 +12,7 @@ import streamlit.components.v1 as components
 
 # basic settings 
 st.set_page_config(layout="wide")
-st.title("McGonagall's Army")
+st.title("Goodreads 2000-2020")
 st.text('Data analysis from the Goodreads starting from the year 2000')
 st.write('''***''')
 st.write('''
