@@ -73,6 +73,13 @@ source_code = HtmlFile.read()
 print(source_code)
 components.html(source_code, height=600)
 
+# display gener
+HtmlFile = open('components/Genres_years.html', 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height=600)
+
+
 # Null values
 st.subheader("Percentage of Null Values")
 missing_percentage = df.isnull().sum() * 100 / len(df) #Calculating percentage of missing values
